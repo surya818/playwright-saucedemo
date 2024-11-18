@@ -17,7 +17,7 @@
 	</br>3. RUN => **npm install** This will install all dependancies needed for playwright and uor tests
 	</br>4. RUN => **npx playwright test** This will start our UI test execution. I have enabled the tests to be headed, and tests will be run in Chromium as I disabled the config for other browsers
 	</br>5. You can access test reports in playwright-report directory
-</br> Here's an output index.html from the test output directory
+</br> **Here's an output index.html from the test output directory for a successful run**
 </br> ![image](https://github.com/user-attachments/assets/ea2b4898-820d-445c-941e-e3bbaf9c396e)
 
 	
@@ -32,7 +32,7 @@
 	
 	</br>5. You can access test reports in your HOST_PATH_FOR_SAVING_LOGS directory of your host machine. 
 	
-</br>**3rd way:** I also created a Github action for the test, which has been run successfully and creates a test report that you can download and the test results run in a github managed agent and the results can be viewed </br>instantly. I could show this in demo. See the below screenshot for one of the successful runs in Github actions
+</br>**3rd way:** I also created a Github action for the test, which has been run successfully and creates a test report that you can download and the test results run in a github managed agent and the results can be viewed </br>instantly. I could show this in demo. **See the below screenshot for one of the successful runs in Github actions**
 ![image](https://github.com/user-attachments/assets/13c3385f-4209-49e5-b4c3-04d7a6934537)
 
 
