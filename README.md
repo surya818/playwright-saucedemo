@@ -29,7 +29,7 @@
 	
 	</br>5. You can access test reports in your HOST_PATH_FOR_SAVING_LOGS directory of your host machine. 
 	
-</br>**3rd way:** I also created a Github action for the test, which has been run successfully and creates a test report that you can download and the test results run in a github managed agent and the results can be viewed </br>instantly. I could show this in demo
+</br>**3rd way:** I also created a Github action for the test, which has been run successfully and creates a test report that you can download and the test results run in a github managed agent and the results can be viewed </br>instantly. I could show this in demo. See the below screenshot for one of the successful runs in Github actions
 ![image](https://github.com/user-attachments/assets/13c3385f-4209-49e5-b4c3-04d7a6934537)
 
 
