@@ -29,3 +29,13 @@
 
 
 </p>
+</br><h2>Source and Framework:</h2>
+</br>I used Page object model. So, the pages inside e2e > pages directory are our Pages, that encapsulate all the selectors and UI actions related to that web page.
+</br> For framework, I directly used Playwright's methods in this effort. I also created framework code which has UIActions interface which defines some sample actions and an implementing PlayWrightActions class that </br>implements all the actions. I have used just one test for demoing this approach. 
+</br> Finally. the tests are inside tests directory, which uses Page object instances and methods to make neccesary UI actions. I also added lot of verifications and asserts
+
+
+
+
+![image](https://github.com/user-attachments/assets/8b7c8d16-ec42-467d-99bf-fa3e451c2a4a)
+
