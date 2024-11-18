@@ -23,7 +23,7 @@
 	</br>1. Clone this repository
 	</br>2. Navigate inside the directory
 	</br>3. Build the docker image => **docker build -t saucedemo-playright:1.0 .**
-	</br>4. Run the docker container with volume option  => docker run -v "<HOST_PATH_FOR_SAVING_LOGS>:/usr/src/app/playwright-report" saucedemo-playright:1.0
+	</br>4. Run the docker container with volume option  => **docker run -v "<HOST_PATH_FOR_SAVING_LOGS>:/usr/src/app/playwright-report" saucedemo-playright:1.0**
 	</br> E.g; docker run -v "C:\Data\outs:/usr/src/app/playwright-report"saucedemo-playright:1.0
 	</br> ![image](https://github.com/user-attachments/assets/57795725-8483-4094-a10b-642b005c73cd)
 	
