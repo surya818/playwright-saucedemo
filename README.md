@@ -1,7 +1,7 @@
 <h1> Playwright UI Test Automation </h1>
 <h3>Run saucedemo Web UI tests written in typescript playwright<h3>
 </br>
-Playwright Typescript Test Automation framework to test saucedemo web application
+</p>Playwright Typescript Test Automation framework to test saucedemo web application
 </br>
 **Tech Stack:**
 Language: Typescript
