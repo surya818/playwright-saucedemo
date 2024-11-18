@@ -38,7 +38,7 @@ jobs:
 
     # 5. Run Playwright tests
     - name: Run Playwright tests
-      run: xvfb-run npx playwright test --reporter=line,junit
+      run: xvfb-run npx playwright test --reporter=line,html
     #7 Create Test Reports dir
     - name: Create playwright-report directory
       run: mkdir playwright-report
