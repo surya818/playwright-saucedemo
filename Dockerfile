@@ -49,3 +49,5 @@ RUN npm install
 
 # Copy the rest of the application code
 COPY . .
+
+ENTRYPOINT ["/bin/bash", "runtests.sh"]
