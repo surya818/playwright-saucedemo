@@ -11,6 +11,7 @@
 </br>The whole setup is containerized. The dockerfile has everything needed for setting up the Nodejs environemnt and run browser based (headed) tests
 </br>**We could run the tests in 3 ways**
 </br>******1st way:** Running the tests locally, on your machine which has nodejs and npm pre-installed
+</br> **Prerequisites**: Nodejs, npm, playwright</br> 
 	</br>1. Clone this repository
 	</br>2. Navigate inside the directory
 	</br>3. RUN => npm install This will install all dependancies needed for playwright and uor tests
