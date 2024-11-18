@@ -1,7 +1,7 @@
 <h1> Playwright UI Test Automation </h1>
 <h3>Run saucedemo Web UI tests written in typescript playwright<h3>
 </br>
-</p>Playwright Typescript Test Automation framework to test saucedemo web application
+<p>Playwright Typescript Test Automation framework to test saucedemo web application
 </br>
 **Tech Stack:**
 Language: Typescript
@@ -28,4 +28,4 @@ The whole setup is containerized. The dockerfile has everything needed for setti
 **3rd way:** I also created a Github action for the test, which has been run successfully and creates a test report that you can download and the test results run in a github managed agent and the results can be viewed instantly. I could show this in demo
 
 
-
+</p>
