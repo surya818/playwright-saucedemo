@@ -39,9 +39,7 @@ jobs:
     # 5. Run Playwright tests
     - name: Run Playwright tests
       run: xvfb-run npx playwright test --reporter=line,junit
-    #7 Create Test Reports dir
-    - name: Create playwright-report directory
-      run: mkdir playwright-report
+
     # 6. Upload test report artifacts (optional)
     - name: Upload test reports
       if: always() # Ensures this runs even if tests fail
