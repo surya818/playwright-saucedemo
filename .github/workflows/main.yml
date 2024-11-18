@@ -22,6 +22,7 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: 16
+       
 
     # 3. Install dependencies
     - name: Install dependencies
@@ -30,6 +31,10 @@ jobs:
     # 4. Install Playwright browsers
     - name: Install Playwright browsers
       run: npx playwright install
+      
+    # 2. Set up XVFB and XAUTH for headful browser tests
+    - name: Set up xvfb and xauth
+      run: sudo apt-get install -y xvfb xauth       
 
     # 5. Run Playwright tests
     - name: Run Playwright tests
