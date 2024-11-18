@@ -3,7 +3,7 @@
 </br>
 <p>Playwright Typescript Test Automation framework to test saucedemo web application
 </br>
-**Tech Stack:**
+<h3>Tech Stack:</h3>
 </br>Language: Typescript
 </br>Framework: Playwright
 </br>Nodejs
@@ -26,6 +26,7 @@
 	</br>5. You can access test reports in playwright-report directory
 	
 </br>**3rd way:** I also created a Github action for the test, which has been run successfully and creates a test report that you can download and the test results run in a github managed agent and the results can be viewed </br>instantly. I could show this in demo
+![image](https://github.com/user-attachments/assets/13c3385f-4209-49e5-b4c3-04d7a6934537)
 
 
 </br><h2>Source and Framework:</h2>
