@@ -58,5 +58,5 @@
 <li>Negative Test: Login fails with invalid password</li>	
 <li>User Cannot login with locked out User ID</li></ul>	
 <ul style="list-style-type: circle;"><b>Purchase flow</b>
-<li>End to End Purchase flow test with 2 kinds of sorts(as per the Test task)</li>
-<li>Note** The purchase flow test appears long because I captured the entire purchase steps sequence in a single test, with steps marked with clear documentation, and validations for each and every page<li></ul>	
+<li>End to End Purchase flow test with 2 kinds of sorts(as per the Test task)</li></ul>
+</br>Note** The purchase flow test appears long because I captured the entire purchase steps sequence in a single test, with steps marked with clear documentation, and validations for each and every page	
