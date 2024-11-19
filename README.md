@@ -25,7 +25,7 @@
 </br>**2nd way:** Running the tests in a docker container. Pre-requisite is that your have docker installed on your machine. Advantage is that this can be used to run the tests inside a container and you dont have to worry </br>about the nodejs and playwright setup. Plus, this could be reused if we want to run tests inside a kubernetes self managed cluster hosts.
 	</br>1. Clone this repository
 	</br>2. Navigate inside the directory
-	</br>3. Build the docker image => **docker build -t saucedemo-playright:1.0 .**
+	</br>3. Build the docker image => **docker build --no-cache -t saucedemo-playright:1.0 .**
 	</br>4. Run the docker container with volume option  => **docker run -v "<HOST_PATH_FOR_SAVING_LOGS>:/usr/src/app/playwright-report" saucedemo-playright:1.0**
 	</br> E.g; docker run -v "C:\Data\outs:/usr/src/app/playwright-report"saucedemo-playright:1.0
 	</br> ![image](https://github.com/user-attachments/assets/57795725-8483-4094-a10b-642b005c73cd)
