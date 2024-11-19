@@ -14,6 +14,8 @@ let baseUrl: string;
 let loginPage: LoginPage;
 const username = testData.staging.username;
 const password = testData.staging.password;
+const topRightProduct = 1;
+
 
 test.describe('Successful Login', () => {
     test.beforeEach(async ({ page }) => {
@@ -28,7 +30,7 @@ test.describe('Successful Login', () => {
     test("Purchase Product", async ({ page }) => {
 
         let productsPage: ProductsPage = new ProductsPage(page);
-        //Sort the products by price low to high
+        //Step 1: Sort the products by price low to high
         await productsPage.sortByPrice_LowToHigh();
 
         //Get the list of products and assert count
@@ -38,7 +40,7 @@ test.describe('Successful Login', () => {
 
         const lastElement = size - 1;
         let cumulativeItemPriceTotal = 0.0;
-        let cartCount = 0;
+        let cartItemsCount = 0;
 
         //Get Item details of the last product
         const lastProductItem = await productsPage.nthItem(inventoryList, lastElement);
@@ -46,45 +48,45 @@ test.describe('Successful Login', () => {
         cumulativeItemPriceTotal += parseFloat(lastProductItem.price.replace('$', ''));
         console.log('Total Price of Items added: ' + cumulativeItemPriceTotal);
 
-        //Add the last product to the cart
+        //Step 2: Add the last product to the cart
         await productsPage.addItemToCart(inventoryList, lastElement);
-        cartCount++;
+        cartItemsCount++;
         await productsPage.clickOnCartIcon();
 
         //Verify Cart and assert the cart item count to be 1
         let cartPage: CartPage = await verifyCartWithAddedItem(lastProductItem);
         await cartPage.navigateToProductsPage();
 
-        //Sort the products by price low to high
+        //Step 3: Sort the products by price low to high
         let current_sort_label = await productsPage.sortContainerLabel();
         expect(current_sort_label).toBe(atoZSortLabel);
 
         //Get the list of products and assert count
         inventoryList = await productsPage.getAllProducts();
         size = await inventoryList.count();
-        const topRightProduct = 1;
 
-        //Get Item details of the last product
+        //Get Item details of the top right product and save the price
         const topRightProductItem = await productsPage.nthItem(inventoryList, topRightProduct);
         topRightProductItem.logItem();
         cumulativeItemPriceTotal += parseFloat(topRightProductItem.price.replace('$', ''));
         console.log('Total Price of Items added: ' + cumulativeItemPriceTotal);
 
-        //Add the last product to the cart
+        //Step 4: Add the top right product product to the cart
         await productsPage.addItemToCart(inventoryList, topRightProduct);
-        cartCount++;
+        cartItemsCount++;
         await productsPage.clickOnCartIcon();
 
-        //Verify Cart and assert the cart item count to be 2
+        //Verify Cart and assert the total cart item count to be 2
         await verifyCartWithAddedItem(topRightProductItem);
 
-        //Click on Checkout and fill the information
-        await proceedToCheckout(cartPage, page);
+        //Step 5: Click on Checkout and fill the information
+        await cartPage.clickOnCheckout();
+        await proceedToCheckout(page);
 
-        //Verify the checkout overview page
-        await verifyCheckoutOverview(page, cartCount, cumulativeItemPriceTotal);
+        //Step 6 and 7: Verify the checkout overview page
+        await verifyCheckoutOverview(page, cartItemsCount, cumulativeItemPriceTotal);
 
-        //Verify the Order confirmation page
+        //Step 8: Verify the Order confirmation page
         await orderConfirmation(page);
 
 
@@ -98,8 +100,8 @@ test.describe('Successful Login', () => {
             let cartPage: CartPage = new CartPage(page);
             const cartList = await cartPage.getCartItems();
             let cartSize = await cartList.count();
-            expect(cartSize).toBe(cartCount);
-            const cartItem = await cartPage.getNthCartItem(cartCount - 1, cartList);
+            expect(cartSize).toBe(cartItemsCount);
+            const cartItem = await cartPage.getNthCartItem(cartItemsCount - 1, cartList);
             expect(cartItem.name).toBe(item.name);
             expect(cartItem.price).toBe(item.price);
             expect(cartItem.description).toBe(item.description);
@@ -108,8 +110,7 @@ test.describe('Successful Login', () => {
     })
 })
 
-async function proceedToCheckout(cartPage: CartPage, page: Page) {
-    await cartPage.clickOnCheckout();
+async function proceedToCheckout(page: Page) {
     let checkoutInfoPage = new CheckoutInfo(page);
     await checkoutInfoPage.fillCheckoutForm();
     await checkoutInfoPage.clickOnContinue();
@@ -126,6 +127,7 @@ async function verifyCheckoutOverview(page: Page, cartCount: number, cumulativeI
     expect(grandTotal).toBe(cumulativeItemPriceTotal + tax);
     checkoutOverViewPage.clickOnFinish();
 }
+
 
 async function orderConfirmation(page: Page) {
     let confirmationPage = new Confirmation(page);
