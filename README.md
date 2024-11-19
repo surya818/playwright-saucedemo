@@ -11,7 +11,7 @@
 </br>The whole setup is containerized. The dockerfile has everything needed for setting up the Nodejs environemnt and run browser based (headed) tests
 </br>**We could run the tests in 3 ways**
 </br>******1st way:** Running the tests locally, on your machine which has nodejs and npm pre-installed
-</br> **Prerequisites**: **Nodejs, npm, playwright**</br> 
+</br> **Prerequisites**: **Nodejs, npm, playwright installed in your system**</br> 
 	</br>1. Clone this repository
 	</br>2. Navigate inside the directory
 	</br>3. RUN => **npm install** This will install all dependancies needed for playwright and uor tests
@@ -58,4 +58,5 @@
 <li>Negative Test: Login fails with invalid password</li>	
 <li>User Cannot login with locked out User ID</li></ul>	
 <ul style="list-style-type: circle;"><b>Purchase flow</b>
-<li>End to End Purchase flow test with 2 kinds of sorts(as per the Test task)</li></ul>	
+<li>End to End Purchase flow test with 2 kinds of sorts(as per the Test task)</li>
+<li>Note** The purchase flow test appears long because I captured the entire purchase steps sequence in a single test, with steps marked with clear documentation, and validations for each and every page<li></ul>	
