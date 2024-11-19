@@ -53,9 +53,9 @@
 ![image](https://github.com/user-attachments/assets/8b7c8d16-ec42-467d-99bf-fa3e451c2a4a)
 
 </br><h3>Tests</h3>	
-<ul style="list-style-type: circle;">Login flow
+<ul style="list-style-type: circle;"><b>Login flow</b>
 <li>Happy Path - Successful Login with valid credentials</li>	
 <li>Negative Test: Login fails with invalid password</li>	
 <li>User Cannot login with locked out User ID</li></ul>	
-<ul style="list-style-type: circle;">Purchase flow 	
+<ul style="list-style-type: circle;"><b>Purchase flow</b>
 <li>End to End Purchase flow test with 2 kinds of sorts(as per the Test task)</li></ul>	
